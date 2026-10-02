@@ -64,14 +64,28 @@
           </ul>
         </div>
 
-        <div class="nav-btn">
+        <div class="nav-btn flex items-center justify-center border gap-6">
           <button
             class="bg-[#a1c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
           >
             Sign in
           </button>
+
+          <ion-icon
+            onclick="onToggleMenu(this)"
+            name="menu-outline"
+            class="text-3xl cursor-pointer lg:hidden"
+          ></ion-icon>
         </div>
       </nav>
     </header>
+
+    <script>
+        const navLinks = document.querySelector(".nav-links")
+      function onToggleMenu(e) {
+        e.name = e.name === "menu" ? "close" : "menu";  
+        navLinks.classList.toggle("top-[9%]")
+      }
+    </script>
   </body>
 </html>
