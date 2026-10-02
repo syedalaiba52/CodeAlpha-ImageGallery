@@ -38,7 +38,7 @@
         </div>
 
         <div
-          class="nav-links bg-white absolute lg:static min-h-[60vh] lg:min-h-fit left-0 top-[-100%] w-full lg:w-auto flex items-center px-5"
+          class="nav-links duration-500 bg-white absolute lg:static min-h-[60vh] lg:min-h-fit left-0 top-[-100%] w-full lg:w-auto flex items-center px-5"
         >
           <ul
             class="flex lg:items-center gap-8 lg:gap-[4vw] flex-col lg:flex-row"
@@ -64,7 +64,7 @@
           </ul>
         </div>
 
-        <div class="nav-btn flex items-center justify-center border gap-6">
+        <div class="nav-btn flex items-center justify-center gap-6">
           <button
             class="bg-[#a1c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]"
           >
@@ -81,10 +81,10 @@
     </header>
 
     <script>
-        const navLinks = document.querySelector(".nav-links")
+      const navLinks = document.querySelector(".nav-links");
       function onToggleMenu(e) {
-        e.name = e.name === "menu" ? "close" : "menu";  
-        navLinks.classList.toggle("top-[9%]")
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLinks.classList.toggle("top-[11%]");
       }
     </script>
   </body>
