@@ -4,6 +4,7 @@ const previewImg = previewBox.querySelector("img");
 const closeIcon = previewBox.querySelector(".icon");
 const currentImg = previewBox.querySelector(".current-img");
 const totalImg = previewBox.querySelector(".total-img");
+const shadow = document.querySelector(".shadow");
 
 window.onload = () => {
   for (let i = 0; i < gallery.length; i++) {
@@ -11,11 +12,11 @@ window.onload = () => {
     let newIndex = i;
     let clickImgIndex;
     gallery[i].onclick = () => {
-        clickImgIndex = newIndex;
-        console.log(i);
-        
-        function preview() {
-          currentImg.textContent = newIndex + 1;
+      clickImgIndex = newIndex;
+      console.log(i);
+
+      function preview() {
+        currentImg.textContent = newIndex + 1;
         let selectedImgUrl = gallery[newIndex].querySelector("img").src;
         previewImg.src = selectedImgUrl;
       }
@@ -56,12 +57,16 @@ window.onload = () => {
       preview();
 
       previewBox.classList.add("show");
-
+      shadow.style.display = "block";
+      document.querySelector("body").style.overflow = "hidden";
+      
       closeIcon.onclick = () => {
         newIndex = clickImgIndex;
         prevBtn.style.display = "block";
         nextBtn.style.display = "block";
         previewBox.classList.remove("show");
+        shadow.style.display = "none";
+        document.querySelector("body").style.overflow = "auto";
       };
     };
   }
